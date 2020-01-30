@@ -1,0 +1,7 @@
+<configs>
+
+<!--	// ZMXuiWar3zukCP // Player Dropped Backpack Size Change Restoration -->
+
+		<set xpath="/lootcontainers/lootcontainer[@id='2']/@size">9,9</set>
+
+</configs>

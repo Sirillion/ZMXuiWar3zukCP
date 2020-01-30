@@ -1,0 +1,86 @@
+<configs>
+
+<!--	// ZMXuiWar3zukCP // Backpack Window Restoration -->
+
+		<remove xpath="/windows/window[@name='windowBackpack']" />
+
+		<append xpath="/windows">
+			<window name="windowBackpack" depth="1" size="592,750" anchor="CenterCenter" panel="Right" controller="BackpackWindow" cursor_area="true">
+
+				<panel name="SMXwindowBackpack" pos="0,0" disableautobackground="true">
+
+					<panel name="header" style="smx_uipanel_header">
+						<sprite name="SMXuiPanelBG" size="607,750" style="smx_uipanel_background" />
+						<sprite name="SMXuiPanelHD" size="607,80" style="smx_uipanel_header_background" />
+						<sprite name="SMXsepLineHD" size="5,567" style="smx_uipanel_header_separation" />
+						<label name="windowName" pos="303,-38" size="607,80" style="smx_uipanel_title" text="INVENTORY" text_key="xuiInventory" />
+						<sprite name="SMXvpDivider" depth="4" pos="527,-90" size="5,620" style="smx_uipanel_header_separation" color="[white]" rotation="360" />
+						<button name="btnStashFillStacks" depth="3" pos="562,-140" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_backpack_dumpfill_icon" pivot="center" tooltip_key="lblStashFillStacks" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+						<button name="btnStashSmart" depth="3" pos="562,-225" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_backpack_dumpsmart_icon" pivot="center" tooltip_key="lblStashSmart" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+						<button name="btnStashAll" depth="3" pos="562,-310" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_backpack_dumpall_icon" pivot="center" tooltip_key="lblStashAll" sound_play_on_hover="[default_uihover]" sound="[paging_click]" visible="{lootingorvehiclestorage}" />
+						<smx_stashbuttons_combobox name="cbxLockedSlots" pos="567,-400" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" tooltip_key="xuiStashLockedSlots" visible="{lootingorvehiclestorage}" />
+						<button name="btnClearInventory" depth="3" pos="562,-550" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_backpack_trash_icon" pivot="center" tooltip_key="lblClearInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+						<button name="btnSort" depth="3" pos="562,-620" size="40,40" style="press, hover, smx_ui_icon_colors" atlas="ItemIconAtlas" sprite="smx_ui_general_sort_icon" pivot="center" tooltip_key="lblSortInventory" sound_play_on_hover="[default_uihover]" sound="[paging_click]" />
+					</panel>
+
+					<panel name="content" depth="1" pos="30,-60" size="630,730" disableautobackground="true">
+						<grid name="inventory" depth="2" pos="3,-3" rows="9" cols="7" cell_width="68" cell_height="68" controller="Backpack" repeat_content="true">
+							<smx_backpack_itemstack_65 name="0" />
+						</grid>
+					</panel>
+
+					<panel name="SMXcurrency" depth="3" pos="0,-680" height="43" disableautobackground="true">
+						<sprite name="costIcon" depth="3" pos="75,-25" size="26,26" atlas="ItemIconAtlas" sprite="smx_ui_general_currency_icon" color="[white]" pivot="center" forgroundlayer="true" />
+						<sprite depth="2" name="background" pos="107,-9" size="402,30" atlas="uiAtlas" sprite="smx_ui_searchinput_background" color="[black]" type="sliced" />
+						<sprite depth="3" name="frame" pos="107,-9" size="404,30" atlas="uiAtlas" sprite="smx_ui_searchinput_frame" color="[white]" type="sliced" />
+						<label name="currency" depth="3" pos="205,-9" size="300,28" text="{currencyamount}" color="[lightGrey]" crispness="Never" effect="outline" effect_distance="1,1" justify="right" />
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// ZMXuiWar3zukCP // Workstation Input - Forge -->
+
+		<append xpath="/windows">
+			<window name="ZMXwindowHDForgeInput" depth="9" size="480,10" panel="Left" controller="WorkstationMaterialInputWindow" materials_accepted="iron,brass,lead,glass,stone,clay" valid_materials_color="[green]" invalid_materials_color="[red]" cursor_area="true">
+
+				<sprite name="backgroundMain" depth="2" pos="99999,99999" size="0,0" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+
+				<panel name="SMXwindowForgeInput" pos="0,0" disableautobackground="true">
+
+					<panel name="content" depth="4" pos="31,669" size="430,136" disableautobackground="true">
+						<rect name="content" depth="1" pos="0,0" size="68,136">
+							<grid depth="7" pos="80,-29" rows="1" cols="3" cell_width="90" cell_height="85" controller="WorkstationMaterialInputGrid" repeat_content="true">
+								<smx_forgeinput_itemstack_85 name="0" />
+							</grid>
+						</rect>
+
+						<rect name="content2" depth="0" pos="136,0" size="210,136" on_press="true">
+
+							<sprite name="SMXredArrow" depth="9" pos="-125,-25" size="60,91" atlas="ItemIconAtlas" sprite="smx_ui_general_arrowmax_icon" color="[uiElementsRed]" />
+
+							<rect name="resources" pos="-290,45">
+								<sprite name="SMXuiPanelBG" depth="0" pos="0,-25" size="120,460" style="smx_uipanel_background" flip="vertically" />
+								<grid pos="20,-45" rows="6" cols="1" cell_width="68" cell_height="68"  repeat_content="false">
+									<smx_input_forge_material_1 name="Iron" />
+									<smx_input_forge_material_2 name="Brass" />
+									<smx_input_forge_material_3 name="Lead" />
+									<smx_input_forge_material_4 name="Sand" />
+									<smx_input_forge_material_5 name="Stone" />
+									<smx_input_forge_material_6 name="Clay" />
+								</grid>
+							</rect>
+						</rect>
+					</panel>
+				</panel>
+			</window>
+		</append>
+
+
+<!--	// ZMXuiWar3zukCP // Forge Input Window Adjustment -->
+
+		<set xpath="/windows/window[@name='windowForgeInput']/panel/panel/rect/rect[@name='resources']/@pos">-290,45</set>
+
+
+</configs>
