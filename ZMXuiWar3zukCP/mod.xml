@@ -8,5 +8,7 @@
 		<launcher_version>0.0.0</launcher_version>
 	</info>
 	<dependencies>
+		<dependency>SMXui</dependency>
+		<dependency>War3zuk-Alpha-18-AIO</dependency>
 	</dependencies>
 </mod>
