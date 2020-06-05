@@ -8,6 +8,6 @@
 
 The purpose of this modlet is to enable compatibility between SMXui and War3zuk Alpha 18 AIO.
 
-> Dependencies: SMXui, War3zuk Alpha 18 AIO.
+> Dependencies: SMXui, War3zuk Alpha 18 AIO 3.04.
 
 > Compatibility: I expect issues with modlets that change or add workstations and perks.
