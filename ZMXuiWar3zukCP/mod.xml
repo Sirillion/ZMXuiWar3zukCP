@@ -3,8 +3,8 @@
 		<author>Sirillion</author>
 		<name>ZMXuiWar3zukCP</name>
 		<description>ZMXuiWar3zukCP is a compatibility patch to bridge the gap between SMXui and War3zuk AIO for 7 Days To Die.</description>
-		<mod_version>18.3.r1</mod_version>
-		<game_version>18.3</game_version>
+		<mod_version>18.4.r2</mod_version>
+		<game_version>18.4</game_version>
 		<launcher_version>0.0.0</launcher_version>
 	</info>
 	<dependencies>

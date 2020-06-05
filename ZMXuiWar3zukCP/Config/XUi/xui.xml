@@ -4,9 +4,9 @@
 
 		// EAC:				Friendly
 
-		// VERSION:			18.3.r1
+		// VERSION:			18.4.r2
 
-		// BUILD:			A18.3B3
+		// BUILD:			A18.4B4
 
 		// DISCLAIMER:		Please be advised that this modlet is intended for use with the build mentioned above. That said it may very well be that
 							it can be used with other builds with little to no risk of failure. It all depends on the standard files being updated or not
@@ -37,90 +37,60 @@
 
 <!--	// ZMXuiWar3zukCP // XUi Scale Reset -->
 
-		<set xpath="/xui/ruleset[@name='default']/@scale">1.255</set>
-		<set xpath="/xui/ruleset[@name='default']/@stackpanel_scale">1.05</set>
-
-<!--	// ZMXuiWar3zukCP // Workstation Window Name Conversions -->
-
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='crafting']/window[@name='WARwindowCraftingQueue']/@name">windowCraftingQueue</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_forge']/window[@name='WARwindowForgeInput']/@name">windowForgeInput</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Forge']/window[@name='WARwindowCraftingQueue']/@name">windowCraftingQueue</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Working Oven']/window[@name='WARwindowCraftingQueue']/@name">windowCraftingQueue</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD GunBench']/window[@name='WARwindowCraftingQueue']/@name">windowCraftingQueue</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD WorkBench']/window[@name='WARwindowCraftingQueue']/@name">windowCraftingQueue</set>
+		<set xpath="/xui/ruleset/@scale">1.255</set>
+		<set xpath="/xui/ruleset/@stackpanel_scale">1.05</set>
 
 
-<!--	// ZMXuiWar3zukCP // Workstation HD Forge Conversion -->
+<!--	// ZMXuiWar3zukCP // Window Paging Header -->
 
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Forge']/window[1]/@name">windowCraftingListForge</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Forge']/window[3]/@name">windowWorkstationCraftingQueue</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Forge']/window[6]/@name">ZMXwindowHDForgeInput</set>
+		<setattribute xpath="/xui/ruleset[@name='default']/window_group/window[@name='windowNonPagingHeader']" name="anchor">CenterTop</setattribute>
 
-		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Forge']/window[7]" />
 
-		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Forge']/window[3]">
+<!--	// ZMXuiWar3zukCP // Character Crafting Layout Conversion -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'crafting')]/window[3]/@name">windowCraftingQueue</set>
+
+
+<!--	// ZMXuiWar3zukCP // Workstation Layout Conversion -->
+
+		<set xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation') and not (contains (@name, 'forge')) or (contains (@name, 'Forge'))]/window[1]/@name">windowWorkstationCraftingList</set>
+		<set xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation') and (contains (@name, 'forge')) or (contains (@name, 'Forge'))]/window[1]/@name">windowCraftingListForge</set>
+		<set xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation') and (contains (@name, 'Forge'))]/window[6]/@name">ZMXwindowHDForgeInput</set>
+		<set xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation') and (contains (@name, 'forge'))]/window[7]/@name">windowForgeInput</set>
+		<set xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation')]/window[3]/@name">windowWorkstationCraftingQueue</set>
+
+		<remove xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation')]/window[contains (@name, 'windowOutput')]" />
+
+		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation') and (contains (@name, 'chemistryStation'))]/window[4]">
+			<window name="SMXemptyFillerWindow10px" />
+		</insertAfter>
+
+		<remove xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation')]/window[contains (@name, 'windowToolsHD')]" />
+
+		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation') and (contains (@name, 'GunBench'))]/window[3]">
+			<window name="windowToolsHD GunBench" />
+		</insertAfter>
+
+		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation') and (contains (@name, 'HD WorkBench'))]/window[3]">
+			<window name="windowToolsHD WorkBench" />
+		</insertAfter>
+
+		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation') and (contains (@name, 'AmmoBench'))]/window[3]">
+			<window name="windowToolsHD AmmoBench" />
+		</insertAfter>
+
+		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation') and (contains (@name, 'HDCementMixer'))]/window[3]">
+			<window name="windowToolsHD HDCementMixer" />
+		</insertAfter>
+
+		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'workstation')]/window[3]">
 			<window name="windowOutputWorkStation" />
 		</insertAfter>
 
-		<setattribute xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Forge']/window[@name='windowNonPagingHeader']" name="anchor">CenterTop</setattribute>
-
-
-<!--	// ZMXuiWar3zukCP // Workstation HD Working Oven Conversion -->
-
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Working Oven']/window[1]/@name">windowWorkstationCraftingList</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Working Oven']/window[3]/@name">windowWorkstationCraftingQueue</set>
-
-		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Working Oven']/window[5]" />
-
-		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Working Oven']/window[3]">
-			<window name="windowOutputWorkStation" />
-		</insertAfter>
-
-		<setattribute xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Working Oven']/window[@name='windowNonPagingHeader']" name="anchor">CenterTop</setattribute>
-
-
-<!--	// ZMXuiWar3zukCP // Workstation HD GunBench Conversion -->
-
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD GunBench']/window[1]/@name">windowWorkstationCraftingList</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD GunBench']/window[3]/@name">windowWorkstationCraftingQueue</set>
-
-		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Working Oven']/window[4]" />
-
-		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD GunBench']/window[3]">
-			<window name="windowOutputWorkStation" />
-		</insertAfter>
-
-		<setattribute xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD GunBench']/window[@name='windowNonPagingHeader']" name="anchor">CenterTop</setattribute>
-
-
-<!--	// ZMXuiWar3zukCP // Workstation HD WorkBench Conversion -->
-
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD WorkBench']/window[1]/@name">windowWorkstationCraftingList</set>
-		<set xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD WorkBench']/window[3]/@name">windowWorkstationCraftingQueue</set>
-
-		<remove xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD WorkBench']/window[4]" />
-
-		<insertAfter xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD WorkBench']/window[3]">
-			<window name="windowOutputWorkStation" />
-		</insertAfter>
-
-		<setattribute xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD WorkBench']/window[@name='windowNonPagingHeader']" name="anchor">CenterTop</setattribute>
 
 <!--	// ZMXuiWar3zukCP // Time Display UI -->
 
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Forge']">
-			<window name="SMXtimeFrame" anchor="LeftTop" />
-		</append>
-
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD Working Oven']">
-			<window name="SMXtimeFrame" anchor="LeftTop" />
-		</append>
-
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD GunBench']">
-			<window name="SMXtimeFrame" anchor="LeftTop" />
-		</append>
-
-		<append xpath="/xui/ruleset[@name='default']/window_group[@name='workstation_HD WorkBench']">
+		<append xpath="/xui/ruleset[@name='default']/window_group[contains (@name, 'HD')]">
 			<window name="SMXtimeFrame" anchor="LeftTop" />
 		</append>
 

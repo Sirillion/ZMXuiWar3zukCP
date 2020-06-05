@@ -83,4 +83,64 @@
 		<set xpath="/windows/window[@name='windowForgeInput']/panel/panel/rect/rect[@name='resources']/@pos">-290,45</set>
 
 
+<!--	// ZMXuiWar3zukCP // Workstation Tools HD Cement Mixer Conversion -->
+
+		<remove xpath="/windows/window[@name='windowToolsHDCementMixer']" />
+
+		<append xpath="/windows">
+			<window name="windowToolsHDCementMixer" depth="9" size="480,10" panel="Left" cursor_area="true">
+				<rect name="content" depth="2" pos="400,417" size="53,162" disablefallthrough="true">
+					<grid name="inventory" rows="3" cols="1" pos="0,0" cell_width="53" cell_height="53" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false" required_tools="HDMotor125cc,HDMotor250cc,HDMotor500cc" required_tools_only="true">
+						<smx_tools_stack_50 name="0" />
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// ZMXuiWar3zukCP // Workstation Tools HD GunBench Conversion -->
+
+		<remove xpath="/windows/window[@name='windowToolsHD GunBench']" />
+
+		<append xpath="/windows">
+			<window name="windowToolsHD GunBench" depth="9" size="480,10" panel="Left" cursor_area="true">
+				<rect name="content" depth="2" pos="400,417" size="53,162" disablefallthrough="true">
+					<grid name="inventory" rows="3" cols="1" pos="0,0" cell_width="53" cell_height="53" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false" required_tools="HDCncHandGuns,HDCncAutomatics,HDCncRifles" required_tools_only="true">
+						<smx_tools_stack_50 name="0" />
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// ZMXuiWar3zukCP // Workstation Tools HD AmmoBench Conversion -->
+
+		<remove xpath="/windows/window[@name='windowToolsHD AmmoBench']" />
+
+		<append xpath="/windows">
+			<window name="windowToolsHD AmmoBench" depth="9" size="480,10" panel="Left" cursor_area="true">
+				<rect name="content" depth="2" pos="400,417" size="53,162" disablefallthrough="true">
+					<grid name="inventory" rows="3" cols="1" pos="0,0" cell_width="53" cell_height="53" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false" required_tools="HDBulletPress,HDGrinder,HDBulletTumbler" required_tools_only="true">
+						<smx_tools_stack_50 name="0" />
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
+<!--	// ZMXuiWar3zukCP // Workstation Tools HD WorkBench Conversion -->
+
+		<remove xpath="/windows/window[@name='windowToolsHD WorkBench']" />
+
+		<append xpath="/windows">
+			<window name="windowToolsHD WorkBench" depth="9" size="480,10" panel="Left" cursor_area="true">
+				<rect name="content" depth="2" pos="400,417" size="53,162" disablefallthrough="true">
+					<grid name="inventory" rows="3" cols="1" pos="0,0" cell_width="53" cell_height="53" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false" required_tools="HDToolAndDieSet,HDCarbonSewingKit,HDWelder" required_tools_only="true">
+						<smx_tools_stack_50 name="0" />
+					</grid>
+				</rect>
+			</window>
+		</append>
+
+
 </configs>
